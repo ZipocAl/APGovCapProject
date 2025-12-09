@@ -61,32 +61,36 @@ h1 {
   color: #0f172a;
 }
 
+/* Hero Section */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 28px;
   margin-top: 32px;
-  align-items: start;
-}
-
-.card {
-  background: white;
-  padding: 22px;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .photo {
   width: 100%;
+  max-width: 300px; /* smaller image */
+  margin: 0 auto 20px auto;
   border-radius: var(--radius);
   overflow: hidden;
-  margin-bottom: 16px;
 }
 
 .photo img {
   width: 100%;
   height: auto;
   border-radius: var(--radius);
+  display: block;
+}
+
+.card {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .features {
@@ -117,10 +121,10 @@ footer {
 
 @media(max-width:900px){
   .hero {
-    grid-template-columns:1fr;
+    flex-direction: column;
   }
   .features {
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 </style>
@@ -142,12 +146,12 @@ footer {
 </header>
 
 <section class="hero">
-  <!-- Left Column: Photo -->
+  <!-- Photo -->
   <div class="photo">
     <img src="jfk.jpg" alt="John F. Kennedy 1960 campaign portrait">
   </div>
 
-  <!-- Right Column: Campaign Card -->
+  <!-- Campaign Card -->
   <div class="card">
     <div>
       <div style="font-size:13px;color:#6b7280;">A New Generation of Leadership</div>
