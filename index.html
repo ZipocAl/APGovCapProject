@@ -8,29 +8,120 @@
 :root {
   --blue: #1a3d7c;
   --red: #c62828;
-  --light: #f5f7fa;
+  --light: #fdfaf7;
   --radius: 12px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-html, body { margin:0; background:var(--light); color:#0f172a; }
-.container { max-width:1100px; margin:40px auto; padding:24px; }
-header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; }
-h1 { margin:0; font-size:36px; }
-.tag { color:#5f6368; margin-top:4px; }
-.nav a { margin-left:12px; text-decoration:none; font-weight:600; padding:8px 14px; border-radius:var(--radius); }
-.btn-primary { background:var(--blue); color:white; }
-.btn-outline { background:transparent; border:1px solid #ccd0d5; color:#0f172a; }
-.hero { display:grid; grid-template-columns:1fr 420px; gap:28px; margin-top:32px; }
-.card { background:white; padding:22px; border-radius:var(--radius); box-shadow:0 8px 20px rgba(0,0,0,.06);}
-.photo { height:380px; border-radius:var(--radius); display:flex; justify-content:center; align-items:center; background:linear-gradient(180deg,#e8ebf1,#d9dee7);}
-.photo img { width:100%; height:auto; border-radius:12px; }
-.features { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px;}
-.feature { border:1px solid #ececec; padding:14px; border-radius:var(--radius);}
-.events, .endorsements { margin-top:22px;}
-footer { text-align:center; margin-top:32px; color:#5f6368; font-size:13px;}
+
+body {
+  margin: 0;
+  background: var(--light);
+  color: #0f172a;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.tag {
+  color: #5f6368;
+  margin-top: 4px;
+}
+
+.nav a {
+  margin-left: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #ccd0d5;
+  color: #0f172a;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 32px;
+  align-items: start;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.photo {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.feature {
+  border: 1px solid #ececec;
+  padding: 14px;
+  border-radius: var(--radius);
+  background: #f9f9f9;
+}
+
+.events,
+.endorsements {
+  margin-top: 22px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 32px;
+  color: #5f6368;
+  font-size: 13px;
+}
+
 @media(max-width:900px){
-  .hero { grid-template-columns:1fr; }
-  .features { grid-template-columns:1fr 1fr; }
+  .hero {
+    grid-template-columns:1fr;
+  }
+  .features {
+    grid-template-columns:1fr 1fr;
+  }
 }
 </style>
 </head>
@@ -51,6 +142,12 @@ footer { text-align:center; margin-top:32px; color:#5f6368; font-size:13px;}
 </header>
 
 <section class="hero">
+  <!-- Left Column: Photo -->
+  <div class="photo">
+    <img src="jfk.jpg" alt="John F. Kennedy 1960 campaign portrait">
+  </div>
+
+  <!-- Right Column: Campaign Card -->
   <div class="card">
     <div>
       <div style="font-size:13px;color:#6b7280;">A New Generation of Leadership</div>
@@ -109,13 +206,6 @@ footer { text-align:center; margin-top:32px; color:#5f6368; font-size:13px;}
       </form>
     </div>
   </div>
-
-  <aside>
-    <div class="photo">
-      <!-- Use local image uploaded to the same repo -->
-      <img src="John-F-KennedyImage.jpg" alt="John F. Kennedy 1960 campaign portrait">
-    </div>
-  </aside>
 </section>
 
 <section id="issues" style="margin-top:40px;">
